@@ -1,0 +1,15 @@
+<div class="header">
+  <h1>My Lists</h1>
+</div>
+<%= link_to "+ new list", new_list_path, class: "admin-button"%>
+<%= link_to "< back", movies_path, class: "back-button"%>
+<div class="grid">
+  <% @lists.each do |list| %>
+    <div class="card-list">
+      <img src="https://image.tmdb.org/t/p/w400/iAq0sq42vKTLneVGqHn1D4GzgrM.jpg" style="filter: brightness(50%)"/>
+      <div class="card-list-infos">
+        <h2><%= link_to list.name, list_path(list), class: "card-list-name" %></h2>
+      </div>
+    </div>
+  <% end %>
+</div>

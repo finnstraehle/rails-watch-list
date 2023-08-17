@@ -1,0 +1,10 @@
+<%= link_to "< back", movies_path, class: "back-button"%>
+<div class="container-movie">
+  <img src="https://image.tmdb.org/t/p/w400/<%= @movie.poster_url %>"/>
+  <div class="container-movie-info text-center p-4">
+    <h1><%= @movie.title %></h1>
+    <p class="movie-rating"><%= @movie.rating %></p>
+    <p><%= @movie.overview %></p>
+    <a href="#">+ add to list</a>
+  </div>
+</div>

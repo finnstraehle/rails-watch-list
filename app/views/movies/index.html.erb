@@ -1,0 +1,15 @@
+<div class="header">
+  <h1>Movies</h1>
+  <%= link_to "MY LISTS", lists_path, class: "admin-button"%>
+</div>
+<div class="grid">
+  <% @movies.each do |movie| %>
+    <div class="card-movie">
+      <img src="https://image.tmdb.org/t/p/w400/<%= movie.poster_url %>"/>
+      <div class="card-movie-infos">
+        <h2><%= link_to movie.title, movie_path(movie), class: "card-movie-name" %></h2>
+        <p><%= "rating: #{movie.rating}" %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
