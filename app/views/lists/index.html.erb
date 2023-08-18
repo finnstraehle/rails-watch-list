@@ -6,7 +6,15 @@
 <div class="grid">
   <% @lists.each do |list| %>
     <div class="card-list">
-      <img src="https://image.tmdb.org/t/p/w400/iAq0sq42vKTLneVGqHn1D4GzgrM.jpg" style="filter: brightness(50%)"/>
+      <div class=card-list-images-container>
+        <div class="card-list-images-grid">
+          <% bookmarks = Bookmark.where(list_id: list.id) %>
+          <% movies_in_list = bookmarks.map { |bookmark| bookmark.movie } %>
+          <% movies_in_list.each do |movie| %>
+            <img src="https://image.tmdb.org/t/p/w300<%= movie.poster_url %>">
+          <% end %>
+        </div>
+      </div>
       <div class="card-list-infos">
         <h2><%= link_to list.name, list_path(list), class: "card-list-name" %></h2>
       </div>

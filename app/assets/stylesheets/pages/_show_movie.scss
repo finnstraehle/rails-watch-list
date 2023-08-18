@@ -1,8 +1,11 @@
 .container-movie {
   display: flex;
   width: 900px;
-  margin: 0 auto;
-  padding: 30px;
+  margin: 50px auto;
+  padding: 50px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
 
   img {
     border-radius: 10px;
@@ -10,6 +13,23 @@
 
   .movie-rating {
     font-size: 25px;
-    color: red;
+    font-weight: bold;
+    color: $violet;
+  }
+
+  h1 {
+    color: black;
+  }
+
+  .button {
+    text-decoration: none;
+    background-color: $violet;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    &:hover {
+      color: white;
+      background-color: $violet-dark;
+    }
   }
 }

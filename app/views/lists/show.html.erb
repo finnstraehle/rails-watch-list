@@ -1,13 +1,13 @@
 <%= link_to "< back", lists_path, class: "back-button"%>
 <h1><%= @list.name %></h1>
+<%= link_to "delete list", list_path(@list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "admin-button"%>
+<%= link_to "+ new bookmark", new_list_bookmark_path(@list), class: "admin-button-two"%>
 <div class="grid-dark">
   <% @movies_in_list.each do |movie| %>
     <div class="card-movie">
       <img src="https://image.tmdb.org/t/p/w400/<%= movie.poster_url %>"/>
       <div class="card-movie-infos">
         <h2><%= link_to movie.title, movie_path(movie), class: "card-movie-name" %></h2>
-        <p><%= "rating: #{movie.rating}" %></p>
-        <p><%= link_to "bookmark", new_list_bookmark(@list) %></p>
       </div>
     </div>
   <% end %>

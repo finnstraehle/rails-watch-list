@@ -37,14 +37,12 @@ List.create!(name: 'Documentary')
 
 # create bookmarks
 puts 'creating bookmarks...'
-Movie.all.each do |movie|
-  List.all.each do |list|
-    Bookmark.create!(
-      comment: Faker::Lorem.paragraph(sentence_count: 2),
-      movie: movie,
-      list: list
-    )
-  end
+40.times do
+  Bookmark.create!(
+    comment: Faker::Lorem.paragraph(sentence_count: 3),
+    movie: Movie.all.sample,
+    list: List.all.sample
+  )
 end
 
 puts 'finished!'
